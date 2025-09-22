@@ -1,0 +1,99 @@
+import React, { useEffect } from "react";
+// import { PiBuildingOfficeFill } from "react-icons/pi";
+import overview from '../../assets/Image/overviewbg.jpg';
+
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+const Presence = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // duration in ms
+  }, []);
+
+  const offices = [
+    {
+      title: "Corporate Office - Rajasthan",
+      address:
+        "201, Gangasagar-B, Amarpali Marg, Vaishali Nagar, Jaipur, Rajasthan-302021",
+    },
+    {
+      title: "Branch Office - Uttar Pradesh",
+      address:
+        "6/349, Sector-6 Gomati Nagar, 226010",
+    },
+    
+    {
+      title: "Branch Office - Maharashtra",
+      address:
+        "Office No. 926, Regus, The Platinum Towers, Old Mundhwa Rd, Tukaram Nagar, Kharadi, Pune, Maharashtra 411014",
+    },
+  ];
+
+  return (
+    <section className="relative lg:px-20 px-5 py-14 bg-gradient-to-br from-[#f8fbff] to-[#eef7ff] overflow-hidden" style={{ backgroundImage: `url(${overview})` }}>
+      {/* Decorative Blobs */}
+      {/* <div className="absolute top-0 -left-20 w-96 h-96 bg-[#00C6FF]/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 -right-20 w-96 h-96 bg-[#0047FF]/20 rounded-full blur-3xl"></div> */}
+
+      {/* Heading */}
+      <div className="text-center mb-10 relative z-10">
+        <h4 className="uppercase text-sm tracking-widest text-white">
+          Best Solar Energy Solutions
+        </h4>
+        <h2 className="lg:text-4xl text-3xl  font-extrabold text-white mt-2" data-aos="flip-left">
+          Our Presence
+        </h2>
+
+      </div>
+
+      <div className="grid lg:grid-cols-2 grid-cols-1  gap-10 items-center relative z-10">
+
+        <div className="relative">
+
+          <div className="absolute left-6 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#00C6FF] to-[#0047FF] animate-pulse" />
+
+          <div className="space-y-5">
+            {offices.map((office, index) => (
+              <div
+                key={index}
+                className="relative flex gap-6 p-5 rounded-2xl bg-white backdrop-blur-md shadow-lg border border-white/40 hover:scale-[1.03] hover:shadow-2xl transition-all duration-300"
+              >
+
+                <div className="absolute -left-3 top-6 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white shadow-xl animate-bounce">
+                  {/* <PiBuildingOfficeFill /> */}
+                </div>
+
+                <div className="ml-8">
+                  <h4 className="font-semibold text-lg text-gray-900">
+                    {office.title}
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed tracking-[0.5px]">
+                    {office.address}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div> 
+     
+
+        <div className="relative w-full h-[300px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white hover:scale-[1.02] transition-all duration-300">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.245217806453!2d75.73235777525845!3d26.861119576690184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db57add311b17%3A0x7039970c4300422b!2sRS%20group!5e0!3m2!1sen!2sin!4v1726069584863!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            allowFullScreen=""
+            loading="lazy"
+            title="Suntek Office Location"
+            className="border-0"
+          ></iframe>
+
+          {/* Glow Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Presence;
