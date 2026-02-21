@@ -31,9 +31,9 @@ const Bannernew = () => {
                     <a href="#" className="hover:text-gray-300 transition mt-3">
                         <FaTwitter/>
                     </a>
-                    <a href="#" className="hover:text-pink-400 transition mt-3">
+                    {/* <a href="#" className="hover:text-pink-400 transition mt-3">
                         <FaInstagram />
-                    </a>
+                    </a> */}
                 </div>
 
 
