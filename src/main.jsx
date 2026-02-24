@@ -9,7 +9,7 @@ import App from './App.jsx'
 // Check if we are in Production mode
 if (import.meta.env.PROD) {
   // 1. Get the ID from your .env file
-  const gaId = import.meta.env.GOOGLE_ANALYTIC_ID;
+  const gaId = import.meta.env.VITE_GOOGLE_ANALYTIC_ID;
 
   // 2. Create and inject the script element
   const script = document.createElement('script');
